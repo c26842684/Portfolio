@@ -28,65 +28,51 @@ public class MainActivity extends AppCompatActivity {
         button6 = (Button)findViewById(R.id.button6);
         button1.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                Context context = getApplicationContext();
-                CharSequence text = button1.getText();
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                displayToast(v);
             }
         });
         button2.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                Context context = getApplicationContext();
-                CharSequence text = button2.getText();
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                displayToast(v);
             }
         });
         button3.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                Context context = getApplicationContext();
-                CharSequence text = button3.getText();
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                displayToast(v);
             }
         });
         button4.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                Context context = getApplicationContext();
-                CharSequence text = button4.getText();
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                displayToast(v);
             }
         });
         button5.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                Context context = getApplicationContext();
-                CharSequence text = button5.getText();
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                displayToast(v);
             }
         });
         button6.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                Context context = getApplicationContext();
-                CharSequence text = button6.getText();
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                displayToast(v);
             }
         });
 
 
+    }
+
+    public void displayToast(View view) {
+
+        Button button = (Button) view;
+
+        String buttonText = (String) button.getText();
+
+        Context context = getApplicationContext();
+        // open_app would add "Opens the app "
+        CharSequence text = getString(R.string.open_app)
+                + buttonText;
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 }
